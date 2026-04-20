@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: ecommerce
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce_spring_2
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000          # 1 day in ms
+      refresh-token-expiration: 604800000  # 7 days in ms
+
+server:
+  port: 8084
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method        # sort by GET/POST/PUT/DELETE
+    tags-sorter: alpha               # sort tags alphabetically
+    display-request-duration: true   # show how long each call took
+    filter: true                     # search box on top
+    try-it-out-enabled: true         # enable "Try it out" by default
+    persist-authorization: true      # keep auth token between page refreshes
+    default-models-expand-depth: 1
+  show-actuator: false
+  packages-to-scan: com.example
+  paths-to-match: /api/**

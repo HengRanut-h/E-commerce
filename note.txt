@@ -1,0 +1,31 @@
+Controller
+   ↓
+ ResponseUtils
+    ↓
+ApiResponseBuilder (you fill data here)
+   ↓
+.build()
+   ↓
+ApiResponse (final object)
+   ↓
+JSON response
+
+
+
+/////////////////////////////////////////
+
+Client Request
+      ↓
+Controller
+      ↓
+Service
+   ↓       ↓
+Success   Exception
+   ↓         ↓
+ResponseUtils   GlobalExceptionHandler
+   ↓         ↓
+ApiResponseBuilder (build)
+      ↓
+Final JSON Response
+      ↓
+Client
